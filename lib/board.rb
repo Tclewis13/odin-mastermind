@@ -9,11 +9,23 @@ class Board
   end
 
   def display_board
-    rows.each do |row|
-      print '[]'.colorize(row.space_one)
-      print '[]'.colorize(row.space_two)
-      print '[]'.colorize(row.space_three)
-      print '[]'.colorize(row.space_four)
+    puts ''
+    puts ''
+    print 'Your Guesses'
+    print '     '
+    print 'Feedback'
+    rows.each_with_index do |row, index|
+      puts ''
+      print '[]'.colorize(row.guess_array[0])
+      print '[]'.colorize(row.guess_array[1])
+      print '[]'.colorize(row.guess_array[2])
+      print '[]'.colorize(row.guess_array[3])
+
+      print '         '
+      print '[]'.colorize(feedback_rows[index].guess_array[0])
+      print '[]'.colorize(feedback_rows[index].guess_array[1])
+      print '[]'.colorize(feedback_rows[index].guess_array[2])
+      print '[]'.colorize(feedback_rows[index].guess_array[3])
     end
   end
 end
