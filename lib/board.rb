@@ -11,8 +11,8 @@ class Board
   def display_board
     puts ''
     puts ''
-    print 'Your Guesses'
-    print '     '
+    print 'Guesses'
+    print '          '
     print 'Feedback'
     rows.each_with_index do |row, index|
       next if index == 0
