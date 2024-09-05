@@ -148,6 +148,7 @@ class Game
       puts 'Computer guessed the code! You lose!'
       exit
     end
+    puts board.rows[0].guess_array
   end
 
   def query_guess
