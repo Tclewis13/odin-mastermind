@@ -3,6 +3,7 @@
 require_relative 'guess'
 require_relative 'feedback'
 require_relative 'board'
+require 'colorize'
 class Game
   attr_accessor :turn, :win, :code, :player_type, :board
 
@@ -22,11 +23,31 @@ class Game
   end
 
   def print_intro
-    puts 'Guess the code. Colors are red, blue, green, cyan, magenta, and yellow.'
+    print 'Guess the code. Colors are '
+    print 'red'.colorize(:red)
+    print ', '
+    print 'blue'.colorize(:blue)
+    print ' , '
+    print 'green'.colorize(:green)
+    print ', '
+    print 'cyan'.colorize(:cyan)
+    print ', '
+    print 'magenta'.colorize(:magenta)
+    print ', '
+    print 'and '
+    print 'yellow.'.colorize(:yellow)
+    puts ''
     puts 'Input guesses as four colors delimited by spaces. Input other than the 6 colors will be marked as an incorrect guess.' # rubocop:disable Layout/LineLength
-    puts 'White feedback indicates a color not present.'
-    puts 'Yellow feedback indicates a correct color in the wrong position.'
-    puts 'Blue feedback indicates a correct color in the correct position.'
+    puts ''
+    print 'White feedback indicates a color not present.'
+    puts ''
+    print 'Yellow '.colorize(:yellow)
+    print 'feedback indicates a correct color in the wrong position.'
+    puts ''
+    print 'Blue '.colorize(:blue)
+    print 'feedback indicates a correct color in the correct position.'
+    puts ''
+    puts ''
     puts 'Good luck!'
   end
 
