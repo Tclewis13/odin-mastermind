@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'colorize'
 
 class Board
@@ -15,7 +17,7 @@ class Board
     print '          '
     print 'Feedback'
     rows.each_with_index do |row, index|
-      next if index == 0
+      next if index.zero?
 
       puts ''
       print '[]'.colorize(row.guess_array[0])

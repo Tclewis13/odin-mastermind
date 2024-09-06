@@ -8,7 +8,7 @@ require_relative 'computer_player'
 class Game
   attr_accessor :turn, :win, :code, :player_type, :board
 
-  COLORS = %i[red blue green cyan magenta yellow]
+  COLORS = %i[red blue green cyan magenta yellow].freeze
 
   def initialize(player_type)
     self.player_type = player_type
@@ -23,7 +23,7 @@ class Game
 
       board.rows << code
       board.feedback_rows << Guess.new(['', '', '', ''], 0)
-      game_flow
+      codebreaker_game_flow
     elsif player_type == 'codemaker'
       print_codemaker_intro
       self.code = query_code

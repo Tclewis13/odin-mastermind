@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Guess
   attr_accessor :guess_array, :turn
 

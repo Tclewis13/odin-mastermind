@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'colorize'
 require_relative 'guess'
 
 class Computer_Player
   attr_accessor :knowledge, :held_color
 
-  COLORS = %i[red blue green cyan magenta yellow]
+  COLORS = %i[red blue green cyan magenta yellow].freeze
 
   def initialize
     self.held_color = :white
@@ -18,8 +20,6 @@ class Computer_Player
   def process_feedback(feedback, guess)
     feedback.guess_array.each_with_index do |space, index|
       knowledge[index] = guess.guess_array[index] if space == :blue
-    end
-    feedback.guess_array.each_with_index do |space, index|
       self.held_color = guess.guess_array[index] if knowledge[index] == :white && space == :yellow
     end
   end
